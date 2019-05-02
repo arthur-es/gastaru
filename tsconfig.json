@@ -22,3 +22,6 @@
     ]
   }
 }
+
+/*noEmitOnError -> não compila pra JS se houver erros no TS*/
+/*noImplicitAny -> não aceita o tipo any de forma implicita*/
