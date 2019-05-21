@@ -1,0 +1,22 @@
+table {
+    width: 100px;
+}
+mat-card {
+    margin: 20px; 
+}
+
+td {
+    font-size: 20px;
+    text-align: left; 
+    vertical-align: middle;
+    height: 50px; 
+    width: 50px;
+    padding-right: 30px;
+}
+th {
+    font-size: 20px;
+    text-align: left; 
+    vertical-align: middle;
+    width: 50px;
+    padding-right: 30px;
+}

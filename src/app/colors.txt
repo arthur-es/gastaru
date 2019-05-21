@@ -1,0 +1,3 @@
+main: #4fc3f7
+P — Light : #8bf6ff
+P — Dark: #0093c4

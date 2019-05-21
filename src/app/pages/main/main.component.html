@@ -1,0 +1,17 @@
+<h1 id="mainTitle">GastarÜ</h1>
+<app-money-status
+    [gastos]="gastos"
+    [ganhos]="ganhos"
+    [balanco]="balanco"
+></app-money-status>
+
+<app-entry-form
+(cadastrouLancamento)="cadastrarLancamento($event);"
+></app-entry-form>
+
+<h3>Lançamentos</h3>
+
+<app-lancamento 
+    *ngFor="let lancamento of lancamentos"
+    [lancamento]="lancamento">
+</app-lancamento>
