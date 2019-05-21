@@ -16,7 +16,7 @@ export class MainComponent implements OnInit {
   lancamentos: Lancamento[] = [];
 
   cadastrarLancamento(evento: any) {
-    this.lancamentos.push({
+    this.lancamentos.unshift({
       nome: evento.nome,
       valor: evento.valor,
       data: evento.data,
