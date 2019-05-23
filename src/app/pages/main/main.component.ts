@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Lancamento } from './lancamento.model';
+import { CategoriaService } from 'src/app/categoria.service';
+import { LancamentoService } from 'src/app/lancamento.service';
+import { MatDialog } from '@angular/material';
+import { ModalComponent } from './modal/modal.component';
+import { FinancasService } from 'src/app/financas.service';
 
 @Component({
   selector: 'app-main',
@@ -9,31 +14,23 @@ import { Lancamento } from './lancamento.model';
 
 export class MainComponent implements OnInit {
 
-  ganhos: number = 1000;
-  gastos: number = 0;
-  balanco: number = this.ganhos - this.gastos;
-
-  lancamentos: Lancamento[] = [];
-
-  cadastrarLancamento(evento: any) {
-    this.lancamentos.unshift({
-      nome: evento.nome,
-      valor: evento.valor,
-      data: evento.data,
-      categoria: evento.categoria
-    });
-    this.atualizaValoresGanhosGastosBalanco();
+  public getCategorias() {
+    return this.categorias.getCategories();
   }
 
-  atualizaValoresGanhosGastosBalanco() {
-    this.gastos = 0;
-    this.lancamentos.forEach((lancamento) => {
-      this.gastos +=  parseFloat(lancamento.valor.toString());
-    });
-    this.balanco = this.ganhos - this.gastos;
+  public getLancamentos() {
+    return this.lancamento.getLancamentos();
   }
 
-  constructor() { }
+  constructor(private categorias: CategoriaService, private lancamento: LancamentoService, public dialog: MatDialog, private financa: FinancasService) { }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(ModalComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
 
   ngOnInit() {
   }

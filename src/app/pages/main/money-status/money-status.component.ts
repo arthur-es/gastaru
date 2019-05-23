@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { FinancasService } from 'src/app/financas.service';
 
 
 @Component({
@@ -8,12 +9,20 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class MoneyStatusComponent implements OnInit {
 
-  @Input() ganhos: number;
-  @Input() gastos: number;
-  @Input() balanco: number;
+  getGastos() {
+    return this.financas.getGastos();
+  }
+
+  getGanhos() {
+    return this.financas.getGanhos();
+  }
+
+  getBalanco() {
+    return this.financas.getBalanco();
+  }
 
 
-  constructor() { }
+  constructor(private financas: FinancasService) { }
 
   ngOnInit() {
   }

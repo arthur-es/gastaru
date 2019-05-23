@@ -15,10 +15,10 @@
         </mat-form-field>
         
         <mat-form-field class="form-field">
-          <mat-select placeholder="Categoria" [(ngModel)]="category" name="category">
-            <mat-option *ngFor="let category of categories" [value]="category.name">
-              <mat-icon *ngIf="isSelected">{{ category.icon }} </mat-icon>
-              {{category.name}} 
+          <mat-select placeholder="Categoria" name="category" [(ngModel)]="category">
+            <mat-option *ngFor="let ct of getCategorias();let i = index" [value]="i">
+              <mat-icon *ngIf="isSelected">{{ ct.icon }} </mat-icon>
+              {{ct.name}} 
             </mat-option>
           </mat-select>
         </mat-form-field> 

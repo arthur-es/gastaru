@@ -1,0 +1,49 @@
+p {
+  font-family: Lato;
+}
+
+
+#card-login {
+  position: fixed;
+  left: 50%;
+  width: 600px;
+  margin-left: -300px;
+}
+
+.mat-form-field-login{
+  width: 100%;
+}
+
+#form-login {
+  position: relative;
+  width: 300px;
+  left: 50%;
+  margin-left: -150px;
+}
+
+.mat-sidenav-container {
+  height: 100%;
+}
+
+/*
+.sidenav-container {
+  height: 100%;
+}
+*/
+
+.mat-sidenav {
+  width: 320px;
+}
+
+.toolbar-title {
+  margin: 0 16px 0 16px;
+}
+
+.mat-subheader {
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.app-nav-list-icon {
+  margin: 0 12px 0 12px;
+}

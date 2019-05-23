@@ -1,0 +1,48 @@
+<mat-sidenav-container>
+
+  <mat-sidenav #sidenav mode="over">
+
+    <mat-toolbar>
+      <mat-toolbar-row>
+        <h2 class="toolbar-title"> GastarU </h2>
+      </mat-toolbar-row>
+    </mat-toolbar>
+
+    <mat-nav-list>
+
+      <h2 matSubheader> Atividades </h2>
+
+      <a mat-list-item routerLink="/" style="height: 0;"></a>
+
+      <a *ngFor="let item of myWorkRoutes"
+        mat-list-item
+        (click)="sidenav.close()"
+        [routerLink]="[item.route]"
+        routerLinkActive="list-item-active">
+        <mat-icon matListIcon class="app-nav-list-icon"> {{ item.icon }} </mat-icon>
+        {{item.title}}
+      </a>
+
+      <mat-divider></mat-divider>
+
+      <h2 matSubheader> Configurações </h2>
+      
+      <a *ngFor="let item of customerRoutes"
+        mat-list-item
+        (click)="sidenav.close()"
+        [routerLink]="[item.route]"
+        routerLinkActive="list-item-active">
+        <mat-icon matListIcon class="app-nav-list-icon"> {{ item.icon }} </mat-icon>
+        {{item.title}}
+      </a>
+
+    </mat-nav-list>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <app-nav-top-bar *ngIf="isAuthenticated()" (toggleSidenav)="sidenav.toggle()"></app-nav-top-bar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

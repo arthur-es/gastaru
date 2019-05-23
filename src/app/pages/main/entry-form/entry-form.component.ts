@@ -1,5 +1,7 @@
 import { Component, OnInit, EventEmitter, Output, ViewChild, ElementRef } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { CategoriaService } from 'src/app/categoria.service';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-entry-form',
@@ -15,15 +17,14 @@ export class EntryFormComponent implements OnInit {
   nome: string = '';
   date = new FormControl(new Date());
   valor: number;
+  category: number;
   isSelected: boolean = false;
 
-  categories = [
-    { name: 'Comida', icon: 'fastfood' },
-    { name: 'Carro', icon: 'directions_car'},
-    { name: 'Casa', icon: 'home'}
-  ];
+  public getCategorias() {
+    return this.categorias.getCategories();
+  }
 
-  constructor() { }
+  constructor(private categorias: CategoriaService, private dialogRef: MatDialog) { }
 
   ngOnInit() {
   }
@@ -37,7 +38,7 @@ export class EntryFormComponent implements OnInit {
         nome: this.nome,
         valor: this.valor,
         data: `${data.getDate()}/${data.getMonth() + 1}/${data.getFullYear()}`,
-        categoria: 'categoria padrao'
+        categoria: this.categorias.getCategoryAt(this.category)
       });
         this.cancel();
         this.inputNome.nativeElement.focus();
@@ -47,6 +48,7 @@ export class EntryFormComponent implements OnInit {
   cancel() {
     this.nome = '';
     this.valor = 0;
+    this.dialogRef.closeAll();
   }
 
 }
