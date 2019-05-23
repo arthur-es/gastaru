@@ -5,6 +5,11 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+<<<<<<< HEAD
+=======
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+>>>>>>> incluindo tela de login, nav-side e nav-top bar ao projeto
 .text-center {
   text-align: center;
 }

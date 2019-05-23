@@ -14,8 +14,11 @@ import { NavSideBarComponent } from './nav-side-bar/nav-side-bar.component';
 import { NavTopBarComponent } from './nav-top-bar/nav-top-bar.component';
 import { LoginComponent } from './login/login.component';
 import { MaterialModule } from './material.module';
+<<<<<<< HEAD
 import { CategoriaService } from './categoria.service';
 import { ModalComponent } from './pages/main/modal/modal.component';
+=======
+>>>>>>> incluindo tela de login, nav-side e nav-top bar ao projeto
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { ModalComponent } from './pages/main/modal/modal.component';
     NavSideBarComponent,
     NavTopBarComponent,
     LoginComponent,
+<<<<<<< HEAD
     ModalComponent,
+=======
+>>>>>>> incluindo tela de login, nav-side e nav-top bar ao projeto
   ],
   imports: [
     BrowserModule,

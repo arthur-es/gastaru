@@ -17,8 +17,13 @@ export class LoginComponent implements OnInit {
   	this.name = 'Angular';
   	this.hide = true;
   	this.ownerForm = new FormGroup({
+<<<<<<< HEAD
 	    email: new FormControl('', [Validators.required, Validators.maxLength(15), Validators.email]),
 	    senha: new FormControl('', [Validators.required, Validators.maxLength(15)])
+=======
+	    email: new FormControl('', [Validators.required, Validators.max(15), Validators.email]),
+	    senha: new FormControl('', [Validators.required, Validators.max(15)])
+>>>>>>> incluindo tela de login, nav-side e nav-top bar ao projeto
 	  })
   }
 
