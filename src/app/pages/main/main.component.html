@@ -1,17 +1,12 @@
 <h1 id="mainTitle">GastarÜ</h1>
-<app-money-status
-    [gastos]="gastos"
-    [ganhos]="ganhos"
-    [balanco]="balanco"
-></app-money-status>
-
-<app-entry-form
-(cadastrouLancamento)="cadastrarLancamento($event);"
-></app-entry-form>
+<app-money-status></app-money-status>
 
 <h3>Lançamentos</h3>
 
 <app-lancamento 
-    *ngFor="let lancamento of lancamentos"
+    *ngFor="let lancamento of getLancamentos()"
     [lancamento]="lancamento">
 </app-lancamento>
+
+<button mat-icon-button id="buttonadd" (click)="openDialog()"><mat-icon>add</mat-icon></button>
+

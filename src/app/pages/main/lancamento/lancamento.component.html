@@ -2,11 +2,13 @@
   <mat-card-content>
     <table>
       <tr>
+        <th>Categoria</th>
         <th>Nome</th>
         <th>Valor</th>
         <th>Data</th>
       </tr>
       <tr>
+        <td><mat-icon>{{lancamento.categoria.icon}}</mat-icon>{{lancamento.categoria.name}}</td>
         <td>{{lancamento.nome}}</td>
         <td>{{lancamento.valor}}</td>
         <td>{{lancamento.data}}</td>

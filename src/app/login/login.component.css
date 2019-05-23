@@ -1,0 +1,21 @@
+p {
+  font-family: Lato;
+}
+
+#card-login {
+  position: fixed;
+  left: 50%;
+  width: 600px;
+  margin-left: -300px;
+}
+
+.mat-form-field-login{
+  width: 100%;
+}
+
+#form-login {
+  position: relative;
+  width: 300px;
+  left: 50%;
+  margin-left: -150px;
+}
