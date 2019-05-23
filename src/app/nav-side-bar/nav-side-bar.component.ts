@@ -24,21 +24,21 @@ export class NavSideBarComponent {
     }, {
       icon: 'dashboard',
       route: 'nav/',
-      title: 'Balanço',
+      title: 'Dashboard',
     }
   ];
 
   customerRoutes: ROUTE[] = [
     {
-      icon: 'contacts',
+      icon: 'category',
       route: 'nav/',
       title: 'Categorias',
     }, {
-      icon: 'people',
+      icon: 'attach_money',
       route: 'nav/',
       title: 'Renda',
     }, {
-      icon: 'settings_phone',
+      icon: 'money_off',
       route: 'nav/',
       title: 'Gastos',
     }
