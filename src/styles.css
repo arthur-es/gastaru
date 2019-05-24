@@ -10,9 +10,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .cor-primaria {
-  color: #3700B3;
+  color: #6BCCF7;
 }
 
 .cor-secundaria {
   color: #BCBCBC;
+}
+
+.cor-primaria-bg {
+  background-color: #473198;
 }
