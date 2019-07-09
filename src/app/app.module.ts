@@ -17,6 +17,7 @@ import { MaterialModule } from './material.module';
 import { CategoriaService } from './categoria.service';
 import { ModalComponent } from './pages/main/modal/modal.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { RegisterComponent } from './pages/register/register.component';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule,
   ],
   entryComponents: [ModalComponent],
   providers: [CategoriaService],
