@@ -33,7 +33,6 @@ export class RegisterComponent implements OnInit {
 
   public cadastrarUsuarioNoBD = () => {
     // Faz requisição ao servidor
-
   }
 
   public hasError = (controlName: string, errorName: string) => {
