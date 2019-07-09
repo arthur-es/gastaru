@@ -18,6 +18,8 @@ import { CategoriaService } from './categoria.service';
 import { ModalComponent } from './pages/main/modal/modal.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ModalRendaComponent } from './pages/main/modal-renda/modal-renda.component';
+import { EntryFormRendaComponent } from './pages/main/entry-form-renda/entry-form-renda.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     ModalComponent,
     RegisterComponent,
+    ModalRendaComponent,
+    EntryFormRendaComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +46,7 @@ import { HttpClientModule } from '@angular/common/http';
     MaterialModule,
     HttpClientModule,
   ],
-  entryComponents: [ModalComponent],
+  entryComponents: [ModalComponent, ModalRendaComponent],
   providers: [CategoriaService],
   bootstrap: [AppComponent]
 })

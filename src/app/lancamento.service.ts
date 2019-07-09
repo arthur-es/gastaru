@@ -13,6 +13,7 @@ export class LancamentoService {
 
   cadastrarLancamento(evento: any) {
     this.lancamentos.unshift({
+      tipo: evento.tipo,
       nome: evento.nome,
       valor: evento.valor,
       data: evento.data,

@@ -1,20 +1,20 @@
-import { Component, OnInit, EventEmitter, Output, ViewChild, ElementRef } from '@angular/core';
+import {Component, ElementRef, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { CategoriaService } from 'src/app/categoria.service';
 import { MatDialog } from '@angular/material';
 
 @Component({
-  selector: 'app-entry-form',
-  templateUrl: './entry-form.component.html',
-  styleUrls: ['./entry-form.component.css']
+  selector: 'app-entry-form-renda',
+  templateUrl: './entry-form-renda.component.html',
+  styleUrls: ['./entry-form-renda.component.css']
 })
-export class EntryFormComponent implements OnInit {
+export class EntryFormRendaComponent implements OnInit {
 
   @ViewChild('inputNome') inputNome: ElementRef;
 
   @Output() cadastrouLancamento = new EventEmitter();
 
-  tipo: string = 'Gasto';
+  tipo: string = 'Renda';
   nome: string = '';
   date = new FormControl(new Date());
   valor: number;
@@ -34,16 +34,16 @@ export class EntryFormComponent implements OnInit {
     if (this.nome == '' || this.valor == 0) {
       alert('Nenhum campo pode estar vazio!');
     } else {
-        const data: Date = this.date.value;
-        this.cadastrouLancamento.emit({
-          tipo: this.tipo,
-          nome: this.nome,
-          valor: this.valor,
-          data: `${data.getDate()}/${data.getMonth() + 1}/${data.getFullYear()}`,
-          categoria: this.categorias.getCategoryAt(this.category)
+      const data: Date = this.date.value;
+      this.cadastrouLancamento.emit({
+        tipo: this.tipo,
+        nome: this.nome,
+        valor: this.valor,
+        data: `${data.getDate()}/${data.getMonth() + 1}/${data.getFullYear()}`,
+        categoria: this.categorias.getCategoryAt(this.category)
       });
-        this.cancel();
-        this.inputNome.nativeElement.focus();
+      this.cancel();
+      this.inputNome.nativeElement.focus();
     }
   }
 
