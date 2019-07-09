@@ -24,13 +24,13 @@
       </mat-form-field>
       <br>
       <mat-form-field class="mat-form-field-login">
-        <input matInput placeholder="Senha" formControlName="senha" [type]="hide ? 'password' : 'text'">
+        <input matInput placeholder="Senha" formControlName="password" [type]="hide ? 'password' : 'text'">
         <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-        <mat-error *ngIf="hasError('senha', 'required')">Campo obrigatório</mat-error>
+        <mat-error *ngIf="hasError('password', 'required')">Campo obrigatório</mat-error>
       </mat-form-field>
 
       <mat-card-actions style="text-align: center;">
-        <button mat-raised-button color="primary" [disabled]="!ownerForm.valid" routerLink="/nav">Cadastrar</button>
+        <button mat-raised-button color="primary" [disabled]="!ownerForm.valid">Cadastrar</button>
       </mat-card-actions>
 
       <mat-divider></mat-divider>

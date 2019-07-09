@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import { UserService } from 'src/app/user.service';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
+  providers: [UserService]
 })
 export class RegisterComponent implements OnInit {
 
@@ -12,12 +14,12 @@ export class RegisterComponent implements OnInit {
   hide: boolean;
   public ownerForm: FormGroup;
 
-  constructor() {
+  constructor(private userService : UserService) {
     this.name = 'Angular';
     this.hide = true;
     this.ownerForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.maxLength(60), Validators.email]),
-      senha: new FormControl('', [Validators.required, Validators.maxLength(60)]),
+      password: new FormControl('', [Validators.required, Validators.maxLength(60)]),
       username: new FormControl('', [Validators.required, Validators.maxLength(60)])
     });
   }
@@ -27,12 +29,13 @@ export class RegisterComponent implements OnInit {
 
   public cadastrarUsuario = () => {
     if (this.ownerForm.valid) {
-      this.cadastrarUsuarioNoBD();
+      this.userService.registerNewUser(this.ownerForm.value).subscribe(
+        response => {
+          alert('Usuário ' + this.ownerForm.value.username + ' cadastrado no sistema!')
+        },
+        error => console.log('error', error)
+      );
     }
-  }
-
-  public cadastrarUsuarioNoBD = () => {
-    // Faz requisição ao servidor
   }
 
   public hasError = (controlName: string, errorName: string) => {
