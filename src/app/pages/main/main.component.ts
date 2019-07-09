@@ -22,13 +22,14 @@ export class MainComponent implements OnInit {
     return this.lancamento.getLancamentos();
   }
 
-  constructor(private categorias: CategoriaService, private lancamento: LancamentoService, public dialog: MatDialog, private financa: FinancasService) { }
+  constructor(private categorias: CategoriaService, private lancamento: LancamentoService,
+              public dialog: MatDialog, private financa: FinancasService) { }
 
   openDialog() {
     const dialogRef = this.dialog.open(ModalComponent);
 
     dialogRef.afterClosed().subscribe(result => {
-      //console.log(`Dialog result: ${result}`);
+      // console.log(`Dialog result: ${result}`);
     });
   }
 

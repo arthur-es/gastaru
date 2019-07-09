@@ -1,0 +1,41 @@
+<mat-card id="card-login">
+  <mat-card-title>
+    <h1 class="text-center cor-secundaria">Gastar<span class="cor-primaria">Ü</span></h1>
+    <!-- <img src="assets/img/logo.png"> -->
+    <h6 class="text-center cor-primaria">Um jeito simples de organizar suas finanças</h6>
+  </mat-card-title>
+  <br>
+  <br>
+  <br>
+
+  <form id="form-login" [formGroup]="ownerForm" autocomplete="on" novalidate (ngSubmit)="cadastrarUsuario()">
+    <mat-card-content>
+      <mat-divider></mat-divider>
+      <br>
+      <br>
+      <mat-form-field class="mat-form-field-login">
+        <input matInput type="text" placeholder="Nome de Usuário" formControlName="username">
+        <mat-error *ngIf="hasError('username', 'required')">Campo obrigatório</mat-error>
+      </mat-form-field>
+      <mat-form-field class="mat-form-field-login">
+        <input matInput type="email" placeholder="Email" formControlName="email">
+        <mat-error *ngIf="hasError('email', 'required')">Campo obrigatório</mat-error>
+        <mat-error *ngIf="hasError('email', 'email')">Email inválido</mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field class="mat-form-field-login">
+        <input matInput placeholder="Senha" formControlName="senha" [type]="hide ? 'password' : 'text'">
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        <mat-error *ngIf="hasError('senha', 'required')">Campo obrigatório</mat-error>
+      </mat-form-field>
+
+      <mat-card-actions style="text-align: center;">
+        <button mat-raised-button color="primary" [disabled]="!ownerForm.valid" routerLink="/nav">Cadastrar</button>
+      </mat-card-actions>
+
+      <mat-divider></mat-divider>
+      <br>
+      <div class="text-center cor-primaria">Já tem conta? Entre Aqui</div>
+    </mat-card-content>
+  </form>
+</mat-card>

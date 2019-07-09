@@ -3,13 +3,18 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { PagesComponent } from './pages/pages.component';
 import { NavSideBarComponent } from './nav-side-bar/nav-side-bar.component';
+import {RegisterComponent} from './pages/register/register.component';
 
 
 const routes: Routes = [
 	{ 
 		path: '',
-		component: LoginComponent 
+		component: LoginComponent
 	},
+  {
+    path: 'register',
+    component: RegisterComponent
+  },
 	{
 		path: 'nav',
 		component: NavSideBarComponent,

@@ -16,6 +16,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { MaterialModule } from './material.module';
 import { CategoriaService } from './categoria.service';
 import { ModalComponent } from './pages/main/modal/modal.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ModalComponent } from './pages/main/modal/modal.component';
     NavTopBarComponent,
     LoginComponent,
     ModalComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
