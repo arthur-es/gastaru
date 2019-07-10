@@ -8,6 +8,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .text-center {
   text-align: center;
 }
+.linksBlock {
+  text-decoration: none;
+  display: block;
+}
 
 .cor-primaria {
   color: #6BCCF7;
