@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
-from models import Lancamento
+from .models import Lancamento
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -15,6 +15,6 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 class LancamentoSerializer (serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Lancamento
-        fields = ('nome', 'categoria', 'valor', 'data')
+        fields = ('tipo', 'nome', 'valor', 'data', 'categoria')
 
 
