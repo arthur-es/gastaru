@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/user.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit {
   hide : Boolean;
   public ownerForm: FormGroup;
 
-  constructor(private userService :UserService) {
+  constructor(private userService :UserService, private router: Router) {
   	this.name = 'Angular';
   	this.hide = true;
   	this.ownerForm = new FormGroup({
@@ -35,6 +36,7 @@ export class LoginComponent implements OnInit {
           this.userService.setToken(response.token);
           console.log(this.userService.getToken());
           //alert('Usuário ' + this.ownerForm.value.username + ' logado!')
+          this.router.navigate(['nav']);
         },
         error => {
           console.log('error', error);

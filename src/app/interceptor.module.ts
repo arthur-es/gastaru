@@ -16,10 +16,11 @@ export class HttpsRequestInterceptor implements HttpInterceptor {
     constructor (private userService:UserService) {}
 
     intercept( req: HttpRequest<any>, next: HttpHandler,): Observable<HttpEvent<any>> {
+        console.log(this.userService.getToken());
         const dupReq = req.clone({
             //headers: req.headers.set('Authorization', 'Token '+this.userService.getToken()),
             setHeaders: {
-                Authorization: `Bearer ${this.userService.getToken()}`
+                Authorization: 'Token '+this.userService.getToken()
             }
         });
         return next.handle(dupReq);

@@ -40,7 +40,7 @@ export class EntryFormComponent implements OnInit {
           nome: this.nome,
           valor: this.valor,
           data: `${data.getDate()}/${data.getMonth() + 1}/${data.getFullYear()}`,
-          categoria: this.categorias.getCategoryAt(this.category)
+          categoria: this.category
       });
         this.cancel();
         this.inputNome.nativeElement.focus();

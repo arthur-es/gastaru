@@ -42,6 +42,7 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.lancamento.pullLancamentos();
   }
 
 }

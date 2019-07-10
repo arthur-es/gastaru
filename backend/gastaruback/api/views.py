@@ -4,8 +4,8 @@ from gastaruback.api.serializers import UserSerializer
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
-from models import Lancamento
-from serializers import LancamentoSerializer
+from .models import Lancamento
+from .serializers import LancamentoSerializer
 
 
 class UserViewSet(viewsets.ModelViewSet):
