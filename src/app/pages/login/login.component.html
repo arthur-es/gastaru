@@ -14,19 +14,19 @@
       <br>
       <br>
       <mat-form-field class="mat-form-field-login">
-        <input matInput type="email" placeholder="Email" formControlName="email">
-        <mat-error *ngIf="hasError('email', 'required')">Campo obrigatório</mat-error>
-        <mat-error *ngIf="hasError('email', 'email')">Email inválido</mat-error>
+        <input matInput placeholder="Usuario" formControlName="username">
+        <mat-error *ngIf="hasError('username', 'required')">Campo obrigatório</mat-error>
+        <!--<mat-error *ngIf="hasError('username', 'email')">Email inválido</mat-error>-->
       </mat-form-field>
       <br>
       <mat-form-field class="mat-form-field-login">
-        <input matInput placeholder="Senha" formControlName="senha" [type]="hide ? 'password' : 'text'">
+        <input matInput placeholder="Senha" formControlName="password" [type]="hide ? 'password' : 'text'">
         <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-        <mat-error *ngIf="hasError('senha', 'required')">Campo obrigatório</mat-error>
+        <mat-error *ngIf="hasError('password', 'required')">Campo obrigatório</mat-error>
       </mat-form-field>
 
       <mat-card-actions style="text-align: center;">
-        <button mat-raised-button color="primary" [disabled]="!ownerForm.valid" routerLink="/nav">Entrar</button>
+        <button mat-raised-button color="primary" [disabled]="!ownerForm.valid">Entrar</button>
       </mat-card-actions>
 
       <mat-divider></mat-divider>

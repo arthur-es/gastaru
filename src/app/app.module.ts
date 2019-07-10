@@ -18,6 +18,7 @@ import { CategoriaService } from './categoria.service';
 import { ModalComponent } from './pages/main/modal/modal.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
+import { Interceptor } from './interceptor.module';
 import { ModalRendaComponent } from './pages/main/modal-renda/modal-renda.component';
 import { EntryFormRendaComponent } from './pages/main/entry-form-renda/entry-form-renda.component';
 
@@ -45,6 +46,7 @@ import { EntryFormRendaComponent } from './pages/main/entry-form-renda/entry-for
     ReactiveFormsModule,
     MaterialModule,
     HttpClientModule,
+    Interceptor,
   ],
   entryComponents: [ModalComponent, ModalRendaComponent],
   providers: [CategoriaService],
