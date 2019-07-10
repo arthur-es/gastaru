@@ -18,6 +18,7 @@ import { CategoriaService } from './categoria.service';
 import { ModalComponent } from './pages/main/modal/modal.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
+import { Interceptor } from './interceptor.module';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     MaterialModule,
     HttpClientModule,
+    Interceptor,
   ],
   entryComponents: [ModalComponent],
   providers: [CategoriaService],

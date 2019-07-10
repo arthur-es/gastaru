@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UserService } from 'src/app/user.service';
 
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  providers: [UserService]
 })
 export class LoginComponent implements OnInit {
 
@@ -13,12 +15,12 @@ export class LoginComponent implements OnInit {
   hide : Boolean;
   public ownerForm: FormGroup;
 
-  constructor() {
+  constructor(private userService :UserService) {
   	this.name = 'Angular';
   	this.hide = true;
   	this.ownerForm = new FormGroup({
-	    email: new FormControl('', [Validators.required, Validators.maxLength(15), Validators.email]),
-	    senha: new FormControl('', [Validators.required, Validators.maxLength(15)])
+	    username: new FormControl('', [Validators.required, Validators.maxLength(15)]),
+	    password: new FormControl('', [Validators.required, Validators.maxLength(15)])
 	  })
   }
 
@@ -27,7 +29,18 @@ export class LoginComponent implements OnInit {
 
   public logaNoSistema = () => {
     if (this.ownerForm.valid) {
-      this.verificaLoginNoBD();
+      this.userService.loginUser(this.ownerForm.value).subscribe(
+        response => {
+          //console.log(response);
+          this.userService.setToken(response.token);
+          console.log(this.userService.getToken());
+          //alert('Usuário ' + this.ownerForm.value.username + ' logado!')
+        },
+        error => {
+          console.log('error', error);
+          alert('Usuário ou senha inválidos!');
+        }
+      );
     }
   }
 
