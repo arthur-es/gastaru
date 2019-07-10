@@ -7,9 +7,13 @@ h3 {
     text-align: center;
 }
 
-#buttonadd {
+.buttons {
     position: fixed;
     right: 10px;
     bottom: 10px;
     background: #6BCCF7;
+}
+
+#buttonRendas {
+  right: 60px;
 }

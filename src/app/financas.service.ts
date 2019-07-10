@@ -6,7 +6,7 @@ import { LancamentoService } from './lancamento.service';
 })
 export class FinancasService {
 
-  public ganhos: number = 1000;
+  public ganhos: number = 0;
   public gastos: number = 0;
   public balanco: number = this.ganhos - this.gastos;
 
@@ -24,8 +24,15 @@ export class FinancasService {
 
   atualizaValoresGanhosGastosBalanco() {
     this.gastos = 0;
+    this.ganhos = 0;
     this.lancamento.getLancamentos().forEach((lancamento) => {
-      this.gastos +=  parseFloat(lancamento.valor.toString());
+      if (lancamento.tipo === 'Gasto') {
+        this.gastos +=  parseFloat(lancamento.valor.toString());
+      } else if (lancamento.tipo === 'Renda') {
+        this.ganhos +=  parseFloat(lancamento.valor.toString());
+      } else {
+        console.log('Erro no tipo de lancamento');
+      }
     });
     this.balanco = this.ganhos - this.gastos;
   }
