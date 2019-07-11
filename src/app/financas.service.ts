@@ -10,7 +10,7 @@ export class FinancasService {
   public gastos: number = 0;
   public balanco: number = this.ganhos - this.gastos;
 
-  constructor(private lancamento: LancamentoService) { }
+  constructor() { }
 
   getGanhos() {
     return this.ganhos;
@@ -22,9 +22,17 @@ export class FinancasService {
     return this.balanco;
   }
 
+
+  setValoresGanhosGastosBalanco(novo_ganhos:number, novo_gastos:number) {
+    this.ganhos = novo_ganhos;
+    this.gastos = novo_gastos;
+    this.balanco = this.ganhos - this.gastos;
+  }
+  /*
   atualizaValoresGanhosGastosBalanco() {
     this.gastos = 0;
     this.ganhos = 0;
+    
     this.lancamento.getLancamentos().forEach((lancamento) => {
       if (lancamento.tipo === 'Gasto') {
         this.gastos +=  parseFloat(lancamento.valor.toString());
@@ -36,4 +44,5 @@ export class FinancasService {
     });
     this.balanco = this.ganhos - this.gastos;
   }
+  */
 }

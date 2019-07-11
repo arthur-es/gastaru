@@ -11,7 +11,6 @@ export class ModalRendaComponent implements OnInit {
 
   cadastrarLancamento(event:any) {
     this.lancamentoServ.cadastrarLancamento(event);
-    this.financasServ.atualizaValoresGanhosGastosBalanco();
   }
 
   constructor(private lancamentoServ: LancamentoService, private financasServ: FinancasService) { }
