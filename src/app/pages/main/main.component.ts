@@ -6,6 +6,8 @@ import { MatDialog } from '@angular/material';
 import { ModalComponent } from './modal/modal.component';
 import { FinancasService } from 'src/app/financas.service';
 import {ModalRendaComponent} from './modal-renda/modal-renda.component';
+import { UserService } from 'src/app/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -23,8 +25,11 @@ export class MainComponent implements OnInit {
     return this.lancamento.getLancamentos();
   }
 
-  constructor(private categorias: CategoriaService, private lancamento: LancamentoService,
-              public dialog: MatDialog, private financa: FinancasService) { }
+  constructor(private router: Router,private userServ : UserService,private categorias: CategoriaService, private lancamento: LancamentoService, public dialog: MatDialog, private financa: FinancasService) {
+    if (userServ.getToken() === '')
+      this.router.navigate(['/']);
+    this.lancamento.pullLancamentos();
+  }
 
   openDialogGastos() {
     const dialogRef = this.dialog.open(ModalComponent);
@@ -42,7 +47,7 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.lancamento.pullLancamentos();
+    
   }
 
 }
