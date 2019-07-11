@@ -34,16 +34,18 @@ export class EntryFormComponent implements OnInit {
     if (this.nome == '' || this.valor == 0) {
       alert('Nenhum campo pode estar vazio!');
     } else {
-        const data: Date = this.date.value;
-        this.cadastrouLancamento.emit({
-          tipo: this.tipo,
-          nome: this.nome,
-          valor: this.valor,
-          data: `${data.getDate()}/${data.getMonth() + 1}/${data.getFullYear()}`,
-          categoria: this.category
+      const data: Date = this.date.value;
+      //console.log(this.categorias.getCategoryAt(this.category));
+
+      this.cadastrouLancamento.emit({
+        tipo: this.tipo,
+        nome: this.nome,
+        valor: this.valor,
+        data: `${data.getDate()}/${data.getMonth() + 1}/${data.getFullYear()}`,
+        categoria: this.categorias.getCategoryAt(this.category)
       });
-        this.cancel();
-        this.inputNome.nativeElement.focus();
+      this.cancel();
+      this.inputNome.nativeElement.focus();
     }
   }
 

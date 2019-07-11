@@ -29,6 +29,7 @@ export class MainComponent implements OnInit {
     if (userServ.getToken() === '')
       this.router.navigate(['/']);
     this.lancamento.pullLancamentos();
+    
   }
 
   openDialogGastos() {
@@ -47,7 +48,8 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+    this.lancamento.pullLancamentos();
+    //this.financa.atualizaValoresGanhosGastosBalanco();
   }
 
 }
