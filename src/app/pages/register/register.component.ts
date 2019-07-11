@@ -33,7 +33,7 @@ export class RegisterComponent implements OnInit {
       this.userService.registerNewUser(this.ownerForm.value).subscribe(
         response => {
           this.router.navigate(['/']);
-          alert('Usuário ' + this.ownerForm.value.username + ' cadastrado no sistema!')
+          //alert('Usuário ' + this.ownerForm.value.username + ' cadastrado no sistema!')
         },
         error => console.log('error', error)
       );
