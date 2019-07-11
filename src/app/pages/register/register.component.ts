@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import { UserService } from 'src/app/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -14,7 +15,7 @@ export class RegisterComponent implements OnInit {
   hide: boolean;
   public ownerForm: FormGroup;
 
-  constructor(private userService : UserService) {
+  constructor(private userService : UserService, private router: Router) {
     this.name = 'Angular';
     this.hide = true;
     this.ownerForm = new FormGroup({
@@ -31,6 +32,7 @@ export class RegisterComponent implements OnInit {
     if (this.ownerForm.valid) {
       this.userService.registerNewUser(this.ownerForm.value).subscribe(
         response => {
+          this.router.navigate(['/']);
           alert('Usuário ' + this.ownerForm.value.username + ' cadastrado no sistema!')
         },
         error => console.log('error', error)
