@@ -6,14 +6,19 @@
 h3 {
     text-align: center;
 }
-
 .buttons {
     position: fixed;
     right: 10px;
     bottom: 10px;
-    background: #6BCCF7;
+    background: #4fc3f7;
+    color: white;
 }
 
 #buttonRendas {
-  right: 60px;
+    background:green;
+    right: 60px;
+}
+
+#buttonGastos {
+    background: red;
 }
