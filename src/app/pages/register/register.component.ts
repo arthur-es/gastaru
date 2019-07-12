@@ -34,6 +34,7 @@ export class RegisterComponent implements OnInit {
         response => {
           this.router.navigate(['/']);
           //alert('Usuário ' + this.ownerForm.value.username + ' cadastrado no sistema!')
+          
         },
         error => console.log('error', error)
       );

@@ -12,7 +12,8 @@ export class CategoriaService {
   categories:Categoria[] = [
     { name: 'Comida', icon: 'fastfood' },
     { name: 'Carro', icon: 'directions_car'},
-    { name: 'Casa', icon: 'home'}
+    { name: 'Casa', icon: 'home'},
+    { name: 'Salario', icon: 'money_attach'}
   ];
 
   getCategories() {
