@@ -4,6 +4,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { PagesComponent } from './pages/pages.component';
 import { NavSideBarComponent } from './nav-side-bar/nav-side-bar.component';
 import {RegisterComponent} from './pages/register/register.component';
+import {ProfileComponent} from "./pages/profile/profile.component";
 
 
 const routes: Routes = [
@@ -22,7 +23,11 @@ const routes: Routes = [
 		{ 
 			path: '',
 			component: PagesComponent
-		}]
+		},
+    {
+      path: 'profile',
+      component: ProfileComponent
+    }]
 	}
 ];
 

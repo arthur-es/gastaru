@@ -1,0 +1,28 @@
+<mat-card class="card">
+  <mat-card-content>
+    <section>
+      <mat-form-field class="form-field">
+        <input #inputNome matInput placeholder="Nome"
+               name="nome" [(ngModel)]="nome">
+        <mat-icon matSuffix>person</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field class="form-field">
+        <input matInput placeholder="Email"
+                name="Email" [(ngModel)]="email">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Telefone" name="telefone"
+               [(ngModel)]="telefone">
+      </mat-form-field>
+
+    </section>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="save()">
+      <mat-icon>done_outline</mat-icon>
+    </button>
+    <button mat-raised-button color="warn" (click)="cancel()">Cancelar</button>
+  </mat-card-actions>
+</mat-card>
