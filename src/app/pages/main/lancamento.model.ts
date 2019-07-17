@@ -6,4 +6,5 @@ export interface Lancamento {
     valor: number;
     data: string;
     categoria: Categoria;
+    id: number;
 }

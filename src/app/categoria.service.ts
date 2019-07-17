@@ -24,7 +24,7 @@ export class CategoriaService {
     return this.categories[i];
   }
 
-  getCategoryIdx(name:string): number {
+  getCategoryIdx(name:String): number {
     for (var i : number = 0; i < this.categories.length; i++) {
       if (this.categories[i].name === name)
         return i;
