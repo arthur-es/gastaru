@@ -43,12 +43,13 @@ export class LoginComponent implements OnInit {
           this.userService.setToken(response.token);
           console.log(this.userService.getToken());
           // alert('Usuário ' + this.ownerForm.value.username + ' logado!')
-          this.openSnackBar('Usuário Cadastrado com Sucesso', 'Fechar');
+          this.openSnackBar('Usuário logado com sucesso', 'Fechar');
           this.router.navigate(['nav']);
         },
         error => {
           console.log('error', error);
-          alert('Usuário ou senha inválidos!');
+          this.openSnackBar('Usuário ou senha inválidos!', 'Fechar');
+          //alert('Usuário ou senha inválidos!');
         }
       );
     }

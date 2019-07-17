@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import { UserService } from 'src/app/user.service';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-register',
@@ -15,7 +16,7 @@ export class RegisterComponent implements OnInit {
   hide: boolean;
   public ownerForm: FormGroup;
 
-  constructor(private userService : UserService, private router: Router) {
+  constructor(private userService : UserService, private router: Router, private snackBar: MatSnackBar) {
     this.name = 'Angular';
     this.hide = true;
     this.ownerForm = new FormGroup({
@@ -28,15 +29,24 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
   }
 
+
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 2000,
+    });
+  }
+
   public cadastrarUsuario = () => {
     if (this.ownerForm.valid) {
       this.userService.registerNewUser(this.ownerForm.value).subscribe(
         response => {
+          this.openSnackBar('Usuário cadastrado com sucesso', 'Fechar');
           this.router.navigate(['/']);
           //alert('Usuário ' + this.ownerForm.value.username + ' cadastrado no sistema!')
-          
         },
-        error => console.log('error', error)
+        error => {
+          this.openSnackBar('Não foi possível criar uma conta com os dados informados', 'Fechar');
+        }
       );
     }
   }
