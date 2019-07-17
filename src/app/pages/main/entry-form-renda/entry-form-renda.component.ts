@@ -39,7 +39,7 @@ export class EntryFormRendaComponent implements OnInit {
         tipo: this.tipo,
         nome: this.nome,
         valor: this.valor,
-        data: `${data.getDate()}/${data.getMonth() + 1}/${data.getFullYear()}`,
+        data: `${data.getDate()}-${data.getMonth() + 1}-${data.getFullYear()}`,
         categoria: this.categorias.getCategoryAt(this.category)
       });
       this.cancel();

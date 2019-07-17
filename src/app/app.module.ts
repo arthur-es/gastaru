@@ -24,6 +24,7 @@ import { EntryFormRendaComponent } from './pages/main/entry-form-renda/entry-for
 import { ProfileComponent } from './pages/profile/profile.component';
 import { ModalprofileComponent } from './pages/profile/modalprofile/modalprofile.component';
 import { AlterformComponent } from './pages/profile/alterform/alterform.component';
+import { EntryFormAttComponent } from './pages/main/entry-form-att/entry-form-att.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { AlterformComponent } from './pages/profile/alterform/alterform.componen
     ProfileComponent,
     ModalprofileComponent,
     AlterformComponent,
+    EntryFormAttComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,7 +56,7 @@ import { AlterformComponent } from './pages/profile/alterform/alterform.componen
     HttpClientModule,
     Interceptor,
   ],
-  entryComponents: [ModalComponent, ModalRendaComponent, ModalprofileComponent],
+  entryComponents: [ModalComponent, ModalRendaComponent, ModalprofileComponent, EntryFormAttComponent],
   providers: [CategoriaService],
   bootstrap: [AppComponent]
 })
