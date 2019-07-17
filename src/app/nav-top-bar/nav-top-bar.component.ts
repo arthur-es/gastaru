@@ -22,4 +22,5 @@ export class NavTopBarComponent implements OnInit {
     this.userServ.setToken('');
     this.router.navigate(['/']);
   }
+
 }

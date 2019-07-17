@@ -30,6 +30,10 @@
             <mat-icon>person_outline</mat-icon>
           </button>
           <mat-menu #auth="matMenu">
+            <button mat-menu-item routerLink="/nav/profile">
+              <mat-icon>edit</mat-icon>
+              <span>Editar Perfil</span>
+            </button>
             <button mat-menu-item (click)="logout()">
               <mat-icon>exit_to_app</mat-icon>
               <span>Sair</span>

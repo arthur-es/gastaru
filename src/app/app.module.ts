@@ -21,6 +21,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { Interceptor } from './interceptor.module';
 import { ModalRendaComponent } from './pages/main/modal-renda/modal-renda.component';
 import { EntryFormRendaComponent } from './pages/main/entry-form-renda/entry-form-renda.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { ModalprofileComponent } from './pages/profile/modalprofile/modalprofile.component';
+import { AlterformComponent } from './pages/profile/alterform/alterform.component';
 import { EntryFormAttComponent } from './pages/main/entry-form-att/entry-form-att.component';
 
 @NgModule({
@@ -38,6 +41,9 @@ import { EntryFormAttComponent } from './pages/main/entry-form-att/entry-form-at
     RegisterComponent,
     ModalRendaComponent,
     EntryFormRendaComponent,
+    ProfileComponent,
+    ModalprofileComponent,
+    AlterformComponent,
     EntryFormAttComponent,
   ],
   imports: [
@@ -50,7 +56,7 @@ import { EntryFormAttComponent } from './pages/main/entry-form-att/entry-form-at
     HttpClientModule,
     Interceptor,
   ],
-  entryComponents: [ModalComponent, ModalRendaComponent, EntryFormAttComponent],
+  entryComponents: [ModalComponent, ModalRendaComponent, ModalprofileComponent, EntryFormAttComponent],
   providers: [CategoriaService],
   bootstrap: [AppComponent]
 })

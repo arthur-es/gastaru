@@ -1,0 +1,34 @@
+.container {
+  position: absolute;
+  left: 50%;
+  margin-left: -300px;
+  width: 600px;
+  margin-top: 30px;
+  padding-top: 10px;
+  text-align: center;
+  background: #1b6d85;
+  padding-bottom: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+#profilephoto {
+  height: 200px;
+  width: 200px;
+  -webkit-border-radius: 400px;
+  -moz-border-radius: 400px;
+  border-radius: 400px;
+  border: 1px solid black;
+}
+
+.profileData #profileUsername {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 18px;
+}
+.profileData #profileName {
+  margin-top: 20px;
+}
+.profileData #deleteUser {
+  margin-left: 20px;
+}
