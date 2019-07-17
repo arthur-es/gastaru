@@ -1,4 +1,21 @@
 <mat-card>
+  <mat-card-title>
+    <div style="text-align: end">
+        <button mat-icon-button [matMenuTriggerFor]="auth">
+            <mat-icon>reorder</mat-icon>
+          </button>
+          <mat-menu #auth="matMenu">
+            <button mat-menu-item (click)="onEdit()">
+              <mat-icon>build</mat-icon>
+              <span>Editar</span>
+            </button>
+            <button mat-menu-item (click)="onDelete()">
+              <mat-icon>delete</mat-icon>
+              <span>Excluir</span>
+            </button>
+          </mat-menu>
+      </div>
+  </mat-card-title>
   <mat-card-content>
     <table align="center">
       <tr>
